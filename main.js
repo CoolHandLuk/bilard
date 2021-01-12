@@ -28,7 +28,6 @@ const appearOnScroll = new IntersectionObserver(function (
   appearOnScroll
 ) {
   entries.forEach((entry) => {
-    console.log(entry);
     if (!entry.isIntersecting) {
       return;
     } else {
@@ -42,3 +41,21 @@ appearOptions);
 faders.forEach((fader) => {
   appearOnScroll.observe(fader);
 });
+
+// Pop up
+let poppy = localStorage.getItem('popup')
+if(!poppy){
+setTimeout(() => {
+  const closeButton = document.querySelector('.popup-button');
+const overlay = document.querySelector('.overlay');
+const popup = document.querySelector('.popup');
+popup.classList.add('active');
+overlay.classList.add('active');
+// zamykanie popupu
+closeButton.addEventListener('click', ()=>{
+popup.classList.remove('active');
+overlay.classList.remove('active');
+})
+}, 3000);
+localStorage.setItem('popup', 'true');
+}

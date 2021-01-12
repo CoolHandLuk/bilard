@@ -265,7 +265,76 @@ p {
   
 }
 
+/* Popup */
 
+.popup {
+  position: fixed;
+  top:30%;
+  left:50%;
+  transform: translate(-50%,-50%) scale(0);
+  transition: 200ms  ease-in-out;
+  max-width:80%;
+  width: 500px;
+  height:300px;
+  background-color: var(--mainColor);
+  border-radius: 10px;
+  z-index: 2200;
+}
+
+.popup.active{
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.popup-header{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.popup-header .popup-h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.popup-p {
+  padding: 50px 15px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.popup-header .popup-button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.modal-body{
+  padding: 10px 15px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+}
+
+.popup-img{
+  max-width:100%;
+  max-height: auto;
+}
+
+.overlay.active{
+  transform: scale(1);
+}
 
 
 /* SECTION NEWS */
@@ -504,5 +573,13 @@ p {
 
   .hero-h1 {
     padding: 0 20px;
+  }
+
+  .popup-header .popup-h1 {
+    font-size: 1.2rem;
+  }
+
+  .popup-p {
+    font-size: 1.2rem;
   }
 }
